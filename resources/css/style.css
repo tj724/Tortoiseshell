@@ -5,6 +5,9 @@ html{
     line-height: 1.4;
 }
 
+/*.container{
+    border: 1px dotted red;
+}*/
 
 .container{
     width: 960px;
@@ -22,6 +25,12 @@ html{
     padding-top:1rem;
 }
 
+#bannertext{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
 #header{
     background-color: cadetblue;
     display: flex;  
@@ -35,9 +44,13 @@ html{
     color: white;
 }
 
-.logo img{
+#logo img{
     height: 1.5rem;
     margin: 0 1rem 0 2rem;
+}
+
+#nav span:last-child{
+    display: none;
 }
 
 #nav a{
@@ -56,11 +69,9 @@ h2{
     line-height: 1.2;
     padding: 1.5rem 5rem;
     position: relative;
-    top: 10rem;
+    margin-top: 10rem;
+    left: 2rem;
     background-color: white;
-    position: relative;
-    left: 35rem;
-    display: inline-block;
 }
 
 
@@ -69,33 +80,50 @@ h2{
 }
 
 
-#icons{
+#icons-wrap{
     display: flex;
-    margin-top: 3rem auto;
+    margin: 3rem 0;
     justify-content: center;
+    align-items: stretch;
 }
 
 
-.icon{
+.iconbox{
     height: 8rem;
     width: 5rem;
-    display: block;
-    margin: 3rem 6rem 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    text-align: center;
+}
+
+.iconbox:nth-child(2),.iconbox:nth-child(3) {
+    margin-left: 6rem;
 }
 
 
-.icon img{
-    width: 3.5rem;
+.iconbox img{
+    width: 100%;
+}
+
+.iconbox span{
+    line-height: 1.4;
 }
 
 
 #paragraphs{
     display: flex;
-    margin-left: 5%;
-    justify-content: flex-start;
 }
 
+.parabox{
+    width: 35%;
+}
 
+.parabox:last-child{
+    padding-left: 5%;
+}
 
 #paragraphs h3{
     font-weight: bold;
@@ -108,9 +136,6 @@ h2{
     width: 10rem;
 }
 
-p{
-    width: 35%;
-}
 
 /*-----Footer Styles-----*/
 #footer{
@@ -124,4 +149,115 @@ p{
 #footer img{
     height: 1.5rem;
     margin-right: 1rem;
+}
+
+
+
+/*--------Tablet Sizes Media Query------*/
+
+@media only screen and (max-width: 960px){
+    #banner{
+        height: 22rem;
+        padding-top: 0;
+    }
+    
+    .container{
+        width: 100%;
+    }
+    
+    h2{
+        font-size: 1.33rem;
+        padding: 0.75rem 4rem;
+        position: relative;
+        margin-top: 5rem;
+        left: 2rem;
+    }
+    
+    .parabox{
+        margin: 0 2rem;
+    }
+
+}
+
+/*--------Mobile Sizes Media Query------*/
+
+@media only screen and (max-width: 640px){
+    #nav span{
+    display: none;
+    }
+    
+    #nav span:last-child{
+    display: block;
+    }
+ 
+    
+    #banner{
+        background-position: 20%;
+        height: 17rem;
+    }
+    
+    h2{
+        padding: 1rem 0;
+        width: 100%;
+        margin-top: 9rem;
+        text-align: center;
+        left: 0; 
+    }
+    
+    #icons-wrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        margin-top: 3.77rem;
+    }
+    
+    
+    .iconbox{
+        display: inline-block;
+        margin-bottom: 0 !important;
+        
+    }
+
+    .iconbox:nth-child(2),.iconbox:nth-child(3) {
+        margin-top: 1.54rem !important;
+        margin-left: 0;
+    }
+
+
+    .iconbox img{
+        width: 3.5rem;
+    }
+    
+    .imagecont{
+        width: 5rem;
+    }
+
+    .iconbox span{
+        line-height: 1.4;
+        font-size: 0.77rem;
+        margin-top: 1.54rem !important;
+    }
+    
+    #paragraphs{
+        display: inline-block;
+    }
+    
+    .parabox{
+        padding: 0 !important;
+        font-size: 0.77rem;
+        margin:0 0 4rem 0;
+        width: 100%;
+    }
+    
+    .parabox h3{
+        padding: 0.75rem 0 !important;
+        width: 100% !important;
+        text-align: center;
+    
+    }
+    
+    .parabox p{
+        padding: 0 1rem;
+    }
+    
 }
